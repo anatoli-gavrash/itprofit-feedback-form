@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+</head>
+<body>
+  <section class="feedback">
+    <h2 class="feedback__title">Форма обратной связи</h2>
+    <form class="feedback__form">
+      <div class="feedback__form-wrapper">
+        <label class="feedback__form-wrapper-label" for="id-name">Имя *</label>
+        <input class="feedback__form-wrapper-input"
+          type="text"
+          name="name"
+          id="id-name"
+          placeholder="Ваше имя *">
+        <label class="feedback__form-wrapper-error" for="id-name">Поле обязательно к заполнению</label>
+      </div>
+      <div class="feedback__form-wrapper">
+        <label class="feedback__form-wrapper-label" for="id-email">E-Mail *</label>
+        <input class="feedback__form-wrapper-input"
+          type="email"
+          name="email"
+          id="id-email"
+          placeholder="Ваш E-Mail *">
+        <label class="feedback__form-wrapper-error" for="id-email">Формат E-Mail должен быть "xx@xx.xx"</label>
+      </div>
+      <div class="feedback__form-wrapper">
+        <label class="feedback__form-wrapper-label" for="id-phone">Телефон *</label>
+        <input class="feedback__form-wrapper-input"
+          type="tel"
+          name="phone"
+          id="id-phone"
+          placeholder="Номер телефона *">
+        <label class="feedback__form-wrapper-error" for="id-phone">Введите ваш телефон</label>
+      </div>
+      <textarea class="feedback__form-textarea"
+        name="message"
+        placeholder="Введите ваше сообщение*"
+      ></textarea>
+      <div class="feedback__form-buttons">
+        <button class="feedback__form-buttons-button">Очистить</button>
+        <button class="feedback__form-buttons-button">Отправить</button>
+      </div>
+    </form>
+  </section>
+</body>
+</html>
