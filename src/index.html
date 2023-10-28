@@ -17,16 +17,16 @@
           name="name"
           id="id-name"
           placeholder="Ваше имя *">
-        <label class="feedback__form-wrapper-error" for="id-name">Поле обязательно к заполнению</label>
+        <label class="feedback__form-wrapper-error hide" for="id-name">Поле обязательно к заполнению</label>
       </div>
       <div class="feedback__form-wrapper">
-        <label class="feedback__form-wrapper-label" for="id-email">E-Mail *</label>
+        <label class="feedback__form-wrapper-label" for="id-email">Email *</label>
         <input class="feedback__form-wrapper-input"
           type="email"
           name="email"
           id="id-email"
-          placeholder="Ваш E-Mail *">
-        <label class="feedback__form-wrapper-error" for="id-email">Формат E-Mail должен быть "xx@xx.xx"</label>
+          placeholder="Ваш Email *">
+        <label class="feedback__form-wrapper-error hide" for="id-email">Формат Email должен быть "xx@xx.xx"</label>
       </div>
       <div class="feedback__form-wrapper">
         <label class="feedback__form-wrapper-label" for="id-phone">Телефон *</label>
@@ -35,15 +35,24 @@
           name="phone"
           id="id-phone"
           placeholder="Номер телефона *">
-        <label class="feedback__form-wrapper-error" for="id-phone">Введите ваш телефон</label>
+        <label class="feedback__form-wrapper-error hide" for="id-phone">Введите ваш телефон</label>
       </div>
-      <textarea class="feedback__form-textarea"
-        name="message"
-        placeholder="Введите ваше сообщение*"
-      ></textarea>
+      <div class="feedback__form-wrapper">
+        <label class="feedback__form-wrapper-label" for="id-message">Сообщение *</label>
+        <textarea class="feedback__form-wrapper-textarea"
+          name="message"
+          id="id-message"
+          placeholder="Введите ваше сообщение *"
+        ></textarea>
+        <label class="feedback__form-wrapper-error hide" for="id-message">Сообщение не должно быть пустым</label>
+      </div>
       <div class="feedback__form-buttons">
-        <button class="feedback__form-buttons-button">Очистить</button>
-        <button class="feedback__form-buttons-button">Отправить</button>
+        <button class="feedback__form-buttons-button alt-button">очистить</button>
+        <button class="feedback__form-buttons-button main-button">отправить</button>
+      </div>
+      <div class="feedback__form-success">
+        <div class="feedback__form-success-icon"></div>
+        <p class="feedback__form-success-message"></p>
       </div>
     </form>
   </section>
