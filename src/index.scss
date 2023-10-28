@@ -1,0 +1,15 @@
+@import
+  './styles/reset.scss',
+  './styles/variables.scss',
+  './styles/patterns.scss',
+  './styles/form.scss'
+;
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-base;
+  color: $color-text;
+}
