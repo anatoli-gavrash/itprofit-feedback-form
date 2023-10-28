@@ -23,6 +23,10 @@
     "server": "node server/index.js"
   },
   "browserslist": "> 0.25%, not dead",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.18.2"
+  },
   "devDependencies": {
     "@babel/core": "7.23.2",
     "@babel/preset-env": "7.23.2",
