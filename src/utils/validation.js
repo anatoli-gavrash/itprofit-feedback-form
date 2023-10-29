@@ -9,7 +9,6 @@ const validation = (data) => {
   const failed = [];
 
   for (const [ruleName, string] of data) {
-    console.log(string);
     if (!rules[ruleName].test(string)) {
       failed.push(ruleName);
     }

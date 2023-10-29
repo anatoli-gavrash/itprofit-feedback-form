@@ -11,35 +11,32 @@
   color: $color-text;
   background-color: unset;
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, scale 0.1s ease-in-out;
+
+  &:hover {
+    scale: 1.02 1.03;
+  }
+
+  &:focus {
+    outline-color: $color-base;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    scale: 0.98 0.97;
+  }
+
+  &:disabled {
+    background-color: $color-disabled;
+    border: 2px solid transparent;
+  }
 }
 
 .main-button {
+  color: $color-text-alt;
   background-color: $color-base;
 }
 
 .alt-button {
   border: 2px solid $color-base;
   background-color: $color-backgr-alt;
-}
-
-.main-button:hover,
-.alt-button:hover {
-  scale: 1.02 1.03;
-}
-
-.main-button:focus,
-.alt-button:focus {
-  outline-color: $color-base;
-  outline-offset: 4px;
-}
-
-.main-button:active,
-.alt-button:active {
-  scale: 0.98 0.97;
-}
-
-.main-button:disabled,
-.alt-button:disabled {
-  background-color: $color-disabled;
-  border: 2px solid transparent;
 }
