@@ -1,4 +1,4 @@
-import {showEndMessage, showFieldErrors} from './dom-actions';
+import {freezeScrollPage, showEndMessage, showFieldErrors, showModalWindow} from './dom-actions';
 import {sendForm} from './service';
 import validation from './validation';
 
@@ -32,4 +32,28 @@ const endMessageButtonHandler = (e) => {
   showEndMessage('close');
 };
 
-export {formHandler, resetButtonHandler, endMessageButtonHandler};
+const modalHandler = (e) => {
+  if (e.target.classList.contains('modal')) {
+    showModalWindow(false);
+    freezeScrollPage(false);
+  }
+};
+
+const modalOpenButtonHandler = (e) => {
+  showModalWindow(true);
+  freezeScrollPage(true);
+};
+
+const modalCloseButtonHandler = (e) => {
+  showModalWindow(false);
+  freezeScrollPage(false);
+};
+
+export {
+  formHandler,
+  resetButtonHandler,
+  endMessageButtonHandler,
+  modalHandler,
+  modalOpenButtonHandler,
+  modalCloseButtonHandler
+};

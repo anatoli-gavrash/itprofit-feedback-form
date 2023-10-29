@@ -38,4 +38,19 @@ const showEndMessage = (status = '', message = 'Waiting for a response from the 
   }
 };
 
-export {showFieldErrors, showEndMessage};
+const showModalWindow = (isShow) => {
+  const modal = document.querySelector('.modal');
+  isShow ? modal.classList.add('show') : modal.classList.remove('show');
+};
+
+const freezeScrollPage = (isFreeze) => {
+  const body = document.body;
+  isFreeze ? body.classList.add('hide-scroll') : body.classList.remove('hide-scroll');
+};
+
+export {
+  showFieldErrors,
+  showEndMessage,
+  showModalWindow,
+  freezeScrollPage
+};
