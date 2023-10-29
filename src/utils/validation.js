@@ -1,17 +1,21 @@
-const validation = (ruleNames = [], string) => {
+const validation = (data) => {
   const rules = {
-    name: /^\b[\p{L} -]+\b$/u,
+    name: /^(?![^\p{L}])[\p{L} -]*[\p{L}]$/u,
     email: /^[\.\w-]+@([\w-]+\.)+[\w-]{1,4}$/,
-    phone: /^[0-9]{11,12}$/,
-    message: /^\b.+$/
+    phone: /^\+375 ?\(\d{2}\) ?\d{3}-\d{2}-\d{2}$/,
+    message: /^.+$/
   };
 
-  return ruleNames.map((ruleName) => {
-    return {
-      name: ruleName,
-      isValid: rules[ruleName].test(string)
-    };
-  });
+  const failed = [];
+
+  for (const [ruleName, string] of data) {
+    console.log(string);
+    if (!rules[ruleName].test(string)) {
+      failed.push(ruleName);
+    }
+  }
+
+  return failed;
 };
 
 export default validation;
