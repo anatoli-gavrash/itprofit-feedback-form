@@ -53,7 +53,13 @@ module.exports = {
   },
   devServer: {
     watchFiles: path.join(__dirname, 'src'),
-    port: 3000,
     hot: true,
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        router: () => 'http://localhost:9090'
+      }
+    }
   },
 };
