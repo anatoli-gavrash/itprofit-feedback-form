@@ -9,7 +9,7 @@
 <body>
   <section class="feedback">
     <h2 class="feedback__title">Форма обратной связи</h2>
-    <form class="feedback__form">
+    <form class="feedback__form" novalidate>
       <div class="feedback__form-wrapper">
         <label class="feedback__form-wrapper-label" for="id-name">Имя *</label>
         <input class="feedback__form-wrapper-input"
@@ -17,7 +17,7 @@
           name="name"
           id="id-name"
           placeholder="Ваше имя *">
-        <label class="feedback__form-wrapper-error hide" for="id-name">Поле обязательно к заполнению</label>
+        <label class="feedback__form-wrapper-error" for="id-name">Поле обязательно к заполнению</label>
       </div>
       <div class="feedback__form-wrapper">
         <label class="feedback__form-wrapper-label" for="id-email">Email *</label>
@@ -26,16 +26,16 @@
           name="email"
           id="id-email"
           placeholder="Ваш Email *">
-        <label class="feedback__form-wrapper-error hide" for="id-email">Формат Email должен быть "xx@xx.xx"</label>
+        <label class="feedback__form-wrapper-error" for="id-email">Формат Email должен быть &laquo;xx@xx.xx&raquo;</label>
       </div>
       <div class="feedback__form-wrapper">
         <label class="feedback__form-wrapper-label" for="id-phone">Телефон *</label>
         <input class="feedback__form-wrapper-input"
-          type="tel"
+          type="text"
           name="phone"
           id="id-phone"
-          placeholder="Номер телефона *">
-        <label class="feedback__form-wrapper-error hide" for="id-phone">Введите ваш телефон</label>
+          placeholder="+{375} (XX) XXX-XX-XX *">
+        <label class="feedback__form-wrapper-error" for="id-phone">Введите ваш телефон</label>
       </div>
       <div class="feedback__form-wrapper">
         <label class="feedback__form-wrapper-label" for="id-message">Сообщение *</label>
@@ -44,15 +44,16 @@
           id="id-message"
           placeholder="Введите ваше сообщение *"
         ></textarea>
-        <label class="feedback__form-wrapper-error hide" for="id-message">Сообщение не должно быть пустым</label>
+        <label class="feedback__form-wrapper-error" for="id-message">Сообщение не должно быть пустым</label>
       </div>
       <div class="feedback__form-buttons">
-        <button class="feedback__form-buttons-button alt-button">очистить</button>
-        <button class="feedback__form-buttons-button main-button">отправить</button>
+        <button class="feedback__form-buttons-button alt-button" type="reset">очистить</button>
+        <button class="feedback__form-buttons-button main-button" type="submit">отправить</button>
       </div>
       <div class="feedback__form-success">
         <div class="feedback__form-success-icon"></div>
         <p class="feedback__form-success-message"></p>
+        <button class="feedback__form-success-button alt-button" type="button">закрыть</button>
       </div>
     </form>
   </section>

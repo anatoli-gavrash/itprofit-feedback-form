@@ -69,10 +69,19 @@
         box-shadow: none;
         scale: 1;
       }
+      &-input.error,
+      &-textarea.error {
+        border: 1px solid $color-error;
+      }
 
       &-error {
         font-size: 14px;
         color: $color-error;
+        visibility: hidden;
+      }
+
+      &-error.error {
+        visibility: visible;
       }
     }
 
@@ -105,11 +114,13 @@
         flex-shrink: 0;
         width: 85px;
         height: 85px;
-        border: 3px solid $color-base;
-        background-color: $color-base;
+        border: 3px solid $color-disabled;
+        background-color: $color-disabled;
         border-radius: 50%;
+        transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
-        &::before {
+        &::before,
+        &::after {
           content: '';
           position: absolute;
           width: 20px;
@@ -117,20 +128,67 @@
           top: 50%;
           left: 50%;
           border: none;
-          border-right: 6px solid $color-backgr;
-          border-bottom: 6px solid $color-backgr;
+          border-right: 6px solid transparent;
+          border-bottom: 6px solid transparent;
           transform-origin: top;
           transform: rotate(43deg) translate(-50%, -43%);
+          transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        &::after {
+          visibility: hidden;
         }
       }
+
+      &.success &-icon {
+        border: 3px solid $color-base;
+        background-color: $color-base;
+
+        &::before {
+          border-right: 6px solid $color-backgr;
+          border-bottom: 6px solid $color-backgr;
+        }
+      }
+
+      &.error &-icon {
+        border: 3px solid $color-error;
+        background-color: $color-error;
+
+        &::before {
+          border: none;
+          width: 40px;
+          height: 6px;
+          top: 47%;
+          left: 51%;
+          background-color: $color-backgr-alt;
+          transform-origin: left;
+          transform: rotate(-45deg) translate(-50%, 0);
+        }
+
+        &::after {
+          width: 40px;
+          height: 6px;
+          top: 47%;
+          left: 51%;
+          background-color: $color-backgr-alt;
+          visibility: visible;
+          transform-origin: left;
+          transform: rotate(45deg) translate(-50%, 0);
+        }
+      }
+
+      &-button {
+        visibility: hidden;
+      }
+
+      &.error &-button,
+      &.success &-button {
+        visibility: visible;
+      }
+    }
+
+    &-success.show {
+      height: 100%;
     }
   }
-}
-
-.hide {
-  visibility: hidden;
-}
-
-.max-height {
-  height: 100%;
 }
